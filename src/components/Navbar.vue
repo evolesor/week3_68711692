@@ -16,14 +16,22 @@
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/showproduct">Show Products</router-link>
+            <router-link class="nav-link" to="/customer_crud">CustomerCRUD</router-link>
           </li>
            <li class="nav-item">
             <router-link class="nav-link" to="/customer">Customer</router-link>
           </li>
-         <li class="nav-item">
-            <router-link class="nav-link" to="/employee">Employee</router-link>
-          </li>
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Employee
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/employee">Employee</a></li>
+            <li><a class="dropdown-item" href="/employee_crud">EmployeeCrud</a></li>
+          </ul>
+           </li>
+
            <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Register
@@ -37,9 +45,15 @@
            <li class="nav-item">
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
-         <li class="nav-item">
-            <router-link class="nav-link" to="/contact">Contact Us</router-link>
-          </li>
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Contact Us
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/contact">Contact</a></li>
+            <li><a class="dropdown-item" href="/contact_crud">ContactCrud</a></li>
+          </ul>
+           </li>
         </ul>
       </div>
     </div>
