@@ -15,6 +15,27 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/product">Product</a></li>
+            <li><a class="dropdown-item" href="/show_product">Show Product</a></li>
+          </ul>
+           </li>
+
+           <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Asset
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/asset">Asset</a></li>
+            <li><a class="dropdown-item" href="/show_asset">Show Asset</a></li>
+          </ul>
+           </li>
+
           <li class="nav-item">
             <router-link class="nav-link" to="/customer_crud">CustomerCRUD</router-link>
           </li>
@@ -41,6 +62,7 @@
             <li><a class="dropdown-item" href="#">Login</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>
           </ul>
+
           </li>
            <li class="nav-item">
             <router-link class="nav-link" to="/about">About</router-link>
