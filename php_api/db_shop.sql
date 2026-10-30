@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2026 at 11:12 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Oct 30, 2026 at 08:53 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assets`
+--
+
+CREATE TABLE `assets` (
+  `asset_id` int(11) NOT NULL,
+  `asset_code` varchar(50) NOT NULL COMMENT 'รหัสครุภัณฑ์',
+  `asset_name` varchar(255) NOT NULL COMMENT 'ชื่อครุภัณฑ์',
+  `purchase_date` date DEFAULT NULL COMMENT 'วันที่ซื้อ',
+  `price` decimal(10,2) DEFAULT NULL COMMENT 'ราคา',
+  `image` varchar(100) DEFAULT NULL COMMENT 'ชื่อไฟล์หรือ Path รูปภาพ',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `assets`
+--
+
+INSERT INTO `assets` (`asset_id`, `asset_code`, `asset_name`, `purchase_date`, `price`, `image`, `created_at`) VALUES
+(1, 'IT001', 'คอมพิวเตอร์ตั้งโต๊ะ', '2026-01-15', '25000.00', '1793346133_computer.jpg', '2026-10-30 06:27:28'),
+(2, 'IT002', 'โน้ตบุ๊ก', '2026-02-10', '32000.00', '1793346105_notebook.jpg', '2026-10-30 06:27:28'),
+(3, 'IT003', 'เครื่องพิมพ์', '2026-03-05', '8500.00', '1793346078_printer.jpg', '2026-10-30 06:27:28'),
+(4, 'IT004', 'โปรเจกเตอร์', '2026-04-20', '18000.00', '1793346048_projector.jpg', '2026-10-30 06:27:28'),
+(5, 'IT005', 'เครื่องสำรองไฟ UPS', '2026-05-12', '3500.00', '1793346011_ups.jpg', '2026-10-30 06:27:28'),
+(9, 'พวงกุญแจนางเงือก', 'นางเงือกกินเผ็ด', '2026-10-30', '650.00', '1793344774_2026-07-24191359.webp', '2026-10-30 07:19:34');
 
 -- --------------------------------------------------------
 
@@ -113,13 +141,21 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `image`, `stock`, `created_at`) VALUES
-(1, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย', 199.00, 'tshirt.jpg', 50, '2026-09-04 02:52:06'),
-(2, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', 799.00, 'jeans.jpg', 30, '2026-09-04 02:52:06'),
-(3, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', 1299.00, 'sneakers.jpg', 20, '2026-09-04 02:52:06');
+(1, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย', '199.00', '1793340335_tshirt.jpg', 50, '2026-09-04 02:52:06'),
+(2, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', '799.00', '1793340323_jeans.jpg', 30, '2026-09-04 02:52:06'),
+(3, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1299.00', '1793340314_shoes.jpg', 20, '2026-09-04 02:52:06'),
+(4, 'พวงกุญแจกระรอกบิน', 'ใช้สำหรับห้อยกระเป๋า', '350.00', '1793340681_momonga.jpg', 10, '2026-10-30 06:11:21'),
+(5, 'แว่นตาเรืองแสง', 'เพิ่มความตระหนักรู้ในตัวคุณ', '999.00', '1793340798_glassess.jpg', 20, '2026-10-30 06:13:18');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `assets`
+--
+ALTER TABLE `assets`
+  ADD PRIMARY KEY (`asset_id`);
 
 --
 -- Indexes for table `contacts`
@@ -150,6 +186,12 @@ ALTER TABLE `products`
 --
 
 --
+-- AUTO_INCREMENT for table `assets`
+--
+ALTER TABLE `assets`
+  MODIFY `asset_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
@@ -171,7 +213,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
