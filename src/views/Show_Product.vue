@@ -4,7 +4,7 @@
     <div class="row"   >
       <div class="col-md-3" v-for="product in products" :key="product.id">
         <div class="card shadow-sm mb-4">
-          <img :src="'http://localhost/project_41970137_week3/php_api/uploads/' + product.image" width="70%" height="300" 
+          <img :src="'http://localhost/week3_68711692/php_api/uploads/' + product.image" width="70%" height="300" 
            class="card-img-top" :alt="product.name">
           <div class="card-body text-center">
             <h5 class="card-title">{{ product.product_name }}</h5>
